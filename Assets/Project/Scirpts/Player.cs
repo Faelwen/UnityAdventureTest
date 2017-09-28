@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	public float jumpingForce;
+	public float movingVelocity;
+	public float jumpingVelocity;
 
 	private bool canJump;
 
@@ -22,17 +23,19 @@ public class Player : MonoBehaviour
 
 	void ProcessInput ()
 	{
+		GetComponent<Rigidbody> ().velocity = new Vector3 (0, GetComponent<Rigidbody> ().velocity.y, 0);
+
 		if (Input.GetKey (KeyCode.RightArrow)) {
-			transform.position += Vector3.right * 5f * Time.deltaTime;
+			GetComponent<Rigidbody> ().velocity = new Vector3 (movingVelocity, GetComponent<Rigidbody> ().velocity.y, GetComponent<Rigidbody> ().velocity.z);
 		}
 		if (Input.GetKey (KeyCode.LeftArrow)) {
-			transform.position += Vector3.left * 5f * Time.deltaTime;
+			GetComponent<Rigidbody> ().velocity = new Vector3 (-movingVelocity, GetComponent<Rigidbody> ().velocity.y, GetComponent<Rigidbody> ().velocity.z);
 		}
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			transform.position += Vector3.forward * 5f * Time.deltaTime;
+			GetComponent<Rigidbody> ().velocity = new Vector3 (GetComponent<Rigidbody> ().velocity.x, GetComponent<Rigidbody> ().velocity.y, movingVelocity);
 		}
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			transform.position += Vector3.back * 5f * Time.deltaTime;
+			GetComponent<Rigidbody> ().velocity = new Vector3 (GetComponent<Rigidbody> ().velocity.x, GetComponent<Rigidbody> ().velocity.y, -movingVelocity);
 		}
 
 		// Prevents jump in midair
@@ -43,7 +46,7 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Space) && canJump) {
 			canJump = false;
-			GetComponent<Rigidbody> ().AddForce (Vector3.up * jumpingForce);
+			GetComponent<Rigidbody> ().velocity += Vector3.up * jumpingVelocity;
 		} 
 	}
 }
