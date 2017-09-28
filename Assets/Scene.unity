@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 34471055}
   - component: {fileID: 34471054}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,6 +383,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1712003444}
+  - component: {fileID: 1712003445}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -404,6 +405,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1712003445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1712003443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71015d349799adc46b09a96819526789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1724143816
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +428,7 @@ GameObject:
   - component: {fileID: 1724143819}
   - component: {fileID: 1724143818}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,7 +510,7 @@ GameObject:
   - component: {fileID: 1849095054}
   - component: {fileID: 1849095053}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
