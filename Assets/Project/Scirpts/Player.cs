@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+	public float jumpingForce;
 
 	// Use this for initialization
 	void Start ()
@@ -26,5 +27,8 @@ public class Player : MonoBehaviour
 		if (Input.GetKey (KeyCode.DownArrow)) {
 			transform.position += Vector3.back * 5f * Time.deltaTime;
 		}
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			GetComponent<Rigidbody> ().AddForce (Vector3.up * jumpingForce);
+		} 
 	}
 }
