@@ -561,8 +561,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71015d349799adc46b09a96819526789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 1346940863}
   movingVelocity: 5
   jumpingVelocity: 5
+  rotatingSpeed: 5
 --- !u!54 &1712003446
 Rigidbody:
   m_ObjectHideFlags: 0
