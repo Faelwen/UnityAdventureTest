@@ -700,7 +700,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e14bdce43010f9478e33215ee5a91a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingingSpeed: 5
+  swingingSpeed: 12
+  cooldownSpeed: 2
+  attackDuration: 0.5
+  cooldownDuration: 0.5
 --- !u!1 &1346940863
 GameObject:
   m_ObjectHideFlags: 0
