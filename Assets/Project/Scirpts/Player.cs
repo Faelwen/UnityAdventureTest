@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
 	public float jumpingVelocity;
 	public float rotatingSpeed;
 
+	[Header ("Equipment")]
+	public Sword sword;
+
 	private Rigidbody playerRigidBody;
 	private Quaternion targetModelRotation;
 	private bool canJump;
@@ -62,5 +65,11 @@ public class Player : MonoBehaviour
 			canJump = false;
 			playerRigidBody.velocity = new Vector3 (playerRigidBody.velocity.x, jumpingVelocity, playerRigidBody.velocity.z);
 		} 
+
+		if (Input.GetKeyDown (KeyCode.Z)) {
+			sword.Attack ();
+		}
 	}
+
+
 }
