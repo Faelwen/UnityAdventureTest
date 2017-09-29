@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 365010676}
   - component: {fileID: 365010675}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,8 +329,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365010673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.372, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.8390339, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0.483, z: 0}
+  m_LocalScale: {x: 0.07238257, y: 1.0672879, z: 0.05}
   m_Children: []
   m_Father: {fileID: 1194170239}
   m_RootOrder: 1
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 726855894}
   - component: {fileID: 726855893}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 782482474}
   - component: {fileID: 782482473}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,8 +687,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 0.1}
-  m_Center: {x: 0, y: 0.32, z: 0}
+  m_Size: {x: 0.1, y: 1.2, z: 0.1}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!114 &1194170241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,9 +701,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingingSpeed: 12
-  cooldownSpeed: 2
-  attackDuration: 0.5
-  cooldownDuration: 0.5
+  cooldownSpeed: 8
+  attackDuration: 0.25
+  cooldownDuration: 0.25
 --- !u!1 &1346940863
 GameObject:
   m_ObjectHideFlags: 0
