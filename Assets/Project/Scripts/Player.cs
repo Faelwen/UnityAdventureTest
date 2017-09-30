@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		bow.gameObject.SetActive (false);
 		playerRigidBody = GetComponent<Rigidbody> ();
 		targetModelRotation = Quaternion.Euler (0, 0, 0);
 	}
@@ -73,11 +74,15 @@ public class Player : MonoBehaviour
 		} 
 
 		if (Input.GetKeyDown (KeyCode.Z)) {
+			sword.gameObject.SetActive (true);
+			bow.gameObject.SetActive (false);
 			sword.Attack ();
 		}
 
 		if (Input.GetKeyDown (KeyCode.X)) {
 			if (arrowAmount > 0) {
+				bow.gameObject.SetActive (true);
+				sword.gameObject.SetActive (false);
 				bow.Attack ();
 				arrowAmount--;
 			}
