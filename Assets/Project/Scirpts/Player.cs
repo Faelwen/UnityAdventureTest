@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
 
 	[Header ("Equipment")]
 	public Sword sword;
+	public GameObject bombPrefab;
+	public float throwingSpeed;
+	public int bombAmount = 5;
 
 	private Rigidbody playerRigidBody;
 	private Quaternion targetModelRotation;
@@ -40,19 +43,19 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKey (KeyCode.RightArrow)) {
 			playerRigidBody.velocity = new Vector3 (movingVelocity, playerRigidBody.velocity.y, playerRigidBody.velocity.z);
-			targetModelRotation = Quaternion.Euler (0, 270, 0);
+			targetModelRotation = Quaternion.Euler (0, 90, 0);
 		}
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			playerRigidBody.velocity = new Vector3 (-movingVelocity, playerRigidBody.velocity.y, playerRigidBody.velocity.z);
-			targetModelRotation = Quaternion.Euler (0, 90, 0);
+			targetModelRotation = Quaternion.Euler (0, 270, 0);
 		}
 		if (Input.GetKey (KeyCode.UpArrow)) {
 			playerRigidBody.velocity = new Vector3 (playerRigidBody.velocity.x, playerRigidBody.velocity.y, movingVelocity);
-			targetModelRotation = Quaternion.Euler (0, 180, 0);
+			targetModelRotation = Quaternion.Euler (0, 0, 0);
 		}
 		if (Input.GetKey (KeyCode.DownArrow)) {
 			playerRigidBody.velocity = new Vector3 (playerRigidBody.velocity.x, playerRigidBody.velocity.y, -movingVelocity);
-			targetModelRotation = Quaternion.Euler (0, 0, 0);
+			targetModelRotation = Quaternion.Euler (0, 180, 0);
 		}
 
 		// Prevents jump in midair
@@ -69,6 +72,23 @@ public class Player : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.Z)) {
 			sword.Attack ();
 		}
+
+		if (Input.GetKeyDown (KeyCode.X)) {
+			ThrowBomb ();
+		}
+	}
+
+	private void ThrowBomb ()
+	{
+		if (bombAmount <= 0) {
+			return;
+		}
+
+		GameObject bombObject = Instantiate (bombPrefab);
+		bombObject.transform.position = transform.position + model.transform.forward;
+		Vector3 throwingDirection = (model.transform.forward + Vector3.up).normalized;
+		bombObject.GetComponent<Rigidbody> ().AddForce (throwingDirection * throwingSpeed);
+		bombAmount--;
 	}
 
 
