@@ -14,9 +14,12 @@ public class Player : MonoBehaviour
 
 	[Header ("Equipment")]
 	public Sword sword;
+	public Bow bow;
 	public GameObject bombPrefab;
 	public float throwingSpeed;
 	public int bombAmount = 5;
+	public int arrowAmount = 20;
+
 
 	private Rigidbody playerRigidBody;
 	private Quaternion targetModelRotation;
@@ -74,6 +77,13 @@ public class Player : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown (KeyCode.X)) {
+			if (arrowAmount > 0) {
+				bow.Attack ();
+				arrowAmount--;
+			}
+		}
+
+		if (Input.GetKeyDown (KeyCode.C)) {
 			ThrowBomb ();
 		}
 	}
