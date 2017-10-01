@@ -20,7 +20,9 @@ public class Enemy : MonoBehaviour
 		print (otherCollider.ToString ());
 
 		if (otherCollider.GetComponent<Sword> () != null) {
-			Hit ();
+			if (otherCollider.GetComponent<Sword> ().IsAttacking) {
+				Hit ();
+			}
 		} else if (otherCollider.GetComponent<Arrow> () != null) {
 			Hit ();
 			Destroy (otherCollider.gameObject);
