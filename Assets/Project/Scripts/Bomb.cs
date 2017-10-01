@@ -27,7 +27,12 @@ public class Bomb : MonoBehaviour
 		explosionTimer -= Time.deltaTime;
 		if (explosionTimer <= 0 && exploded == false) {
 			exploded = true;
-			//Collider[] hitObjects = Physics.OverlapSphere (transform.position, explosionRadius);
+			Collider[] hitObjects = Physics.OverlapSphere (transform.position, explosionRadius);
+			foreach (Collider collider in hitObjects) {
+				if (collider.GetComponent<Enemy> () != null) {
+					collider.GetComponent<Enemy> ().Hit ();
+				}
+			}
 			StartCoroutine (Explode ());
 		}
 	}
