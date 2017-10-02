@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour {
+public class EnemyBullet : MonoBehaviour
+{
+
+	public float speed = 10f;
+	public float lifetime = 1f;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+		GetComponent<Rigidbody> ().velocity = transform.forward * speed;
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+	{
+		lifetime -= Time.deltaTime;
+		if (lifetime <= 0) {
+			Destroy (gameObject);
+		}
 	}
+
 }
