@@ -1244,6 +1244,8 @@ MonoBehaviour:
   movingVelocity: 5
   jumpingVelocity: 5
   rotatingSpeed: 5
+  knockbackForce: 300
+  health: 10
   sword: {fileID: 1194170241}
   bow: {fileID: 1707894467}
   bombPrefab: {fileID: 1302877906490288, guid: 05d452afc1089404d89fba445867a17b, type: 2}
